@@ -2,7 +2,14 @@
 using Antlr4.Runtime.Tree;
 using CSVQueryLanguage;
 
-var file = File.ReadAllText("/Users/minjipark/workspace/CSVQueryLanguage/CSVQueryLanguage/test.csv");
+Console.WriteLine("Please enter your query ...");
+var query = Console.ReadLine();
+
+var queryParser = new QueryParser();
+if (query != null) queryParser.Parse(query);
+
+var path ="/Users/minjipark/workspace/CSVQueryLanguage/CSVQueryLanguage/";
+var file = File.ReadAllText(path +"test.csv");
 
 var inputStream = new AntlrInputStream(file);
 var lexer = new CSVLexer(inputStream);
@@ -17,7 +24,6 @@ var data = listener.Result;
 
 foreach (var list in data)
 {
-
     foreach (var row in list)
     {
         Console.Write(row + " ");

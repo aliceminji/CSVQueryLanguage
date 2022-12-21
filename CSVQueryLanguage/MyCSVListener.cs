@@ -23,7 +23,7 @@ public class MyCSVListener : CSVBaseListener
     {
         // if (context.Parent.RuleIndex == CSVParser.RULE_hdr)
         // {
-        //     return;
+        //     
         // }
 
         var m = new List<string>();
